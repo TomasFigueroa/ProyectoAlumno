@@ -4,7 +4,11 @@ namespace ProyectoAlumno
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
     }
 }
+
+
+//test
+//ll

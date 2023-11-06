@@ -30,40 +30,41 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            label11 = new Label();
+            lblMensaje = new Label();
+            Check_Analitico = new CheckBox();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            Txt_Apellido = new TextBox();
+            Txt_Legajo = new TextBox();
+            Txt_Nombre = new TextBox();
+            Txt_DNI = new TextBox();
             button2 = new Button();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
+            Bt_Cargar_alm = new Button();
             tabControl2 = new TabPage();
             label6 = new Label();
+            Fecha = new DateTimePicker();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            textBox11 = new TextBox();
-            textBox10 = new TextBox();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
+            Txt_Monto = new TextBox();
+            Txt_Descrip = new TextBox();
+            Txt_DNI_Pago = new TextBox();
+            Txt_Cuota = new TextBox();
+            Txt_COD = new TextBox();
             button4 = new Button();
             button3 = new Button();
             Dt_Pago = new DataGridView();
+            Dt_Alumno = new DataGridView();
+            lblMensaje1 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Dt_Pago).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Dt_Alumno).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -73,161 +74,153 @@
             tabControl1.Location = new Point(12, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(776, 426);
+            tabControl1.Size = new Size(1011, 214);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(label11);
+            tabPage1.Controls.Add(lblMensaje);
+            tabPage1.Controls.Add(Check_Analitico);
             tabPage1.Controls.Add(label10);
             tabPage1.Controls.Add(label9);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
-            tabPage1.Controls.Add(textBox5);
-            tabPage1.Controls.Add(textBox4);
-            tabPage1.Controls.Add(textBox3);
-            tabPage1.Controls.Add(textBox2);
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(Txt_Apellido);
+            tabPage1.Controls.Add(Txt_Legajo);
+            tabPage1.Controls.Add(Txt_Nombre);
+            tabPage1.Controls.Add(Txt_DNI);
             tabPage1.Controls.Add(button2);
-            tabPage1.Controls.Add(button1);
-            tabPage1.Controls.Add(dataGridView1);
+            tabPage1.Controls.Add(Bt_Cargar_alm);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(768, 393);
+            tabPage1.Size = new Size(1003, 181);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Alumno";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // lblMensaje
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(475, 237);
-            label11.Name = "label11";
-            label11.Size = new Size(58, 20);
-            label11.TabIndex = 12;
-            label11.Text = "label11";
+            lblMensaje.AutoSize = true;
+            lblMensaje.Location = new Point(39, 92);
+            lblMensaje.Name = "lblMensaje";
+            lblMensaje.Size = new Size(0, 20);
+            lblMensaje.TabIndex = 14;
+            // 
+            // Check_Analitico
+            // 
+            Check_Analitico.AutoSize = true;
+            Check_Analitico.Location = new Point(629, 41);
+            Check_Analitico.Name = "Check_Analitico";
+            Check_Analitico.Size = new Size(90, 24);
+            Check_Analitico.TabIndex = 13;
+            Check_Analitico.Text = "Analitico";
+            Check_Analitico.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(475, 175);
+            label10.Location = new Point(462, 14);
             label10.Name = "label10";
-            label10.Size = new Size(58, 20);
+            label10.Size = new Size(54, 20);
             label10.TabIndex = 11;
-            label10.Text = "label10";
+            label10.Text = "Legajo";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(476, 117);
+            label9.Location = new Point(316, 17);
             label9.Name = "label9";
-            label9.Size = new Size(50, 20);
+            label9.Size = new Size(66, 20);
             label9.TabIndex = 10;
-            label9.Text = "label9";
+            label9.Text = "Apellido";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(476, 66);
+            label8.Location = new Point(167, 14);
             label8.Name = "label8";
-            label8.Size = new Size(50, 20);
+            label8.Size = new Size(64, 20);
             label8.TabIndex = 9;
-            label8.Text = "label8";
+            label8.Text = "Nombre";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(476, 17);
+            label7.Location = new Point(16, 17);
             label7.Name = "label7";
-            label7.Size = new Size(50, 20);
+            label7.Size = new Size(35, 20);
             label7.TabIndex = 8;
-            label7.Text = "label7";
+            label7.Text = "DNI";
             // 
-            // textBox5
+            // Txt_Apellido
             // 
-            textBox5.Location = new Point(475, 260);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 7;
+            Txt_Apellido.Location = new Point(316, 38);
+            Txt_Apellido.Name = "Txt_Apellido";
+            Txt_Apellido.Size = new Size(125, 27);
+            Txt_Apellido.TabIndex = 7;
             // 
-            // textBox4
+            // Txt_Legajo
             // 
-            textBox4.Location = new Point(475, 198);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 6;
+            Txt_Legajo.Location = new Point(462, 38);
+            Txt_Legajo.Name = "Txt_Legajo";
+            Txt_Legajo.Size = new Size(125, 27);
+            Txt_Legajo.TabIndex = 5;
             // 
-            // textBox3
+            // Txt_Nombre
             // 
-            textBox3.Location = new Point(475, 140);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 5;
+            Txt_Nombre.Location = new Point(166, 35);
+            Txt_Nombre.Name = "Txt_Nombre";
+            Txt_Nombre.Size = new Size(125, 27);
+            Txt_Nombre.TabIndex = 4;
             // 
-            // textBox2
+            // Txt_DNI
             // 
-            textBox2.Location = new Point(475, 87);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(475, 36);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 3;
+            Txt_DNI.Location = new Point(15, 36);
+            Txt_DNI.Name = "Txt_DNI";
+            Txt_DNI.Size = new Size(125, 27);
+            Txt_DNI.TabIndex = 3;
             // 
             // button2
             // 
-            button2.Location = new Point(668, 85);
+            button2.Location = new Point(852, 87);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 2;
             button2.Text = "BORRAR";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Bt_Cargar_alm
             // 
-            button1.Location = new Point(668, 36);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 1;
-            button1.Text = "CARGAR";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 16);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(440, 323);
-            dataGridView1.TabIndex = 0;
+            Bt_Cargar_alm.Location = new Point(852, 38);
+            Bt_Cargar_alm.Name = "Bt_Cargar_alm";
+            Bt_Cargar_alm.Size = new Size(94, 29);
+            Bt_Cargar_alm.TabIndex = 1;
+            Bt_Cargar_alm.Text = "CARGAR";
+            Bt_Cargar_alm.UseVisualStyleBackColor = true;
+            Bt_Cargar_alm.Click += Bt_Cargar_alm_Click;
             // 
             // tabControl2
             // 
+            tabControl2.Controls.Add(lblMensaje1);
             tabControl2.Controls.Add(label6);
+            tabControl2.Controls.Add(Fecha);
             tabControl2.Controls.Add(label5);
             tabControl2.Controls.Add(label4);
             tabControl2.Controls.Add(label3);
             tabControl2.Controls.Add(label2);
             tabControl2.Controls.Add(label1);
-            tabControl2.Controls.Add(textBox11);
-            tabControl2.Controls.Add(textBox10);
-            tabControl2.Controls.Add(textBox9);
-            tabControl2.Controls.Add(textBox8);
-            tabControl2.Controls.Add(textBox7);
-            tabControl2.Controls.Add(textBox6);
+            tabControl2.Controls.Add(Txt_Monto);
+            tabControl2.Controls.Add(Txt_Descrip);
+            tabControl2.Controls.Add(Txt_DNI_Pago);
+            tabControl2.Controls.Add(Txt_Cuota);
+            tabControl2.Controls.Add(Txt_COD);
             tabControl2.Controls.Add(button4);
             tabControl2.Controls.Add(button3);
-            tabControl2.Controls.Add(Dt_Pago);
             tabControl2.Location = new Point(4, 29);
             tabControl2.Name = "tabControl2";
             tabControl2.Padding = new Padding(3);
-            tabControl2.Size = new Size(768, 393);
+            tabControl2.Size = new Size(1003, 181);
             tabControl2.TabIndex = 1;
             tabControl2.Text = "Pago";
             tabControl2.UseVisualStyleBackColor = true;
@@ -235,102 +228,102 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(500, 300);
+            label6.Location = new Point(513, 9);
             label6.Name = "label6";
-            label6.Size = new Size(50, 20);
-            label6.TabIndex = 15;
-            label6.Text = "label6";
+            label6.Size = new Size(111, 20);
+            label6.TabIndex = 16;
+            label6.Text = "Fecha del pago";
+            // 
+            // Fecha
+            // 
+            Fecha.Location = new Point(513, 32);
+            Fecha.Name = "Fecha";
+            Fecha.Size = new Size(250, 27);
+            Fecha.TabIndex = 15;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(500, 245);
+            label5.Location = new Point(340, 8);
             label5.Name = "label5";
-            label5.Size = new Size(50, 20);
+            label5.Size = new Size(133, 20);
             label5.TabIndex = 14;
-            label5.Text = "label5";
+            label5.Text = "Monto de la Cuota";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(500, 192);
+            label4.Location = new Point(184, 60);
             label4.Name = "label4";
-            label4.Size = new Size(50, 20);
+            label4.Size = new Size(87, 20);
             label4.TabIndex = 13;
-            label4.Text = "label4";
+            label4.Text = "Descripcion";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(500, 138);
+            label3.Location = new Point(184, 6);
             label3.Name = "label3";
-            label3.Size = new Size(50, 20);
+            label3.Size = new Size(119, 20);
             label3.TabIndex = 12;
-            label3.Text = "label3";
+            label3.Text = "DNI del ALumno";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(500, 88);
+            label2.Location = new Point(18, 67);
             label2.Name = "label2";
-            label2.Size = new Size(50, 20);
+            label2.Size = new Size(48, 20);
             label2.TabIndex = 11;
-            label2.Text = "label2";
+            label2.Text = "Cuota";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(500, 27);
+            label1.Location = new Point(18, 6);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(58, 20);
             label1.TabIndex = 10;
-            label1.Text = "label1";
+            label1.Text = "Codigo";
             // 
-            // textBox11
+            // Txt_Monto
             // 
-            textBox11.Location = new Point(500, 323);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(125, 27);
-            textBox11.TabIndex = 9;
+            Txt_Monto.Location = new Point(340, 30);
+            Txt_Monto.Name = "Txt_Monto";
+            Txt_Monto.Size = new Size(125, 27);
+            Txt_Monto.TabIndex = 8;
             // 
-            // textBox10
+            // Txt_Descrip
             // 
-            textBox10.Location = new Point(500, 267);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(125, 27);
-            textBox10.TabIndex = 8;
+            Txt_Descrip.Location = new Point(184, 83);
+            Txt_Descrip.Name = "Txt_Descrip";
+            Txt_Descrip.Size = new Size(125, 27);
+            Txt_Descrip.TabIndex = 7;
             // 
-            // textBox9
+            // Txt_DNI_Pago
             // 
-            textBox9.Location = new Point(500, 215);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(125, 27);
-            textBox9.TabIndex = 7;
+            Txt_DNI_Pago.Location = new Point(184, 30);
+            Txt_DNI_Pago.Name = "Txt_DNI_Pago";
+            Txt_DNI_Pago.Size = new Size(125, 27);
+            Txt_DNI_Pago.TabIndex = 6;
             // 
-            // textBox8
+            // Txt_Cuota
             // 
-            textBox8.Location = new Point(500, 159);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(125, 27);
-            textBox8.TabIndex = 6;
+            Txt_Cuota.Location = new Point(18, 83);
+            Txt_Cuota.Name = "Txt_Cuota";
+            Txt_Cuota.Size = new Size(125, 27);
+            Txt_Cuota.TabIndex = 5;
             // 
-            // textBox7
+            // Txt_COD
             // 
-            textBox7.Location = new Point(500, 104);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(125, 27);
-            textBox7.TabIndex = 5;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(500, 51);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
-            textBox6.TabIndex = 4;
+            Txt_COD.Location = new Point(18, 30);
+            Txt_COD.Name = "Txt_COD";
+            Txt_COD.Size = new Size(125, 27);
+            Txt_COD.TabIndex = 4;
             // 
             // button4
             // 
-            button4.Location = new Point(668, 129);
+            button4.Location = new Point(883, 78);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 3;
@@ -339,7 +332,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(668, 79);
+            button3.Location = new Point(883, 28);
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
             button3.TabIndex = 2;
@@ -349,28 +342,48 @@
             // Dt_Pago
             // 
             Dt_Pago.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dt_Pago.Location = new Point(26, 27);
+            Dt_Pago.Location = new Point(529, 261);
             Dt_Pago.Name = "Dt_Pago";
             Dt_Pago.RowHeadersWidth = 51;
             Dt_Pago.RowTemplate.Height = 29;
-            Dt_Pago.Size = new Size(440, 323);
+            Dt_Pago.Size = new Size(490, 336);
             Dt_Pago.TabIndex = 1;
+            // 
+            // Dt_Alumno
+            // 
+            Dt_Alumno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Dt_Alumno.Location = new Point(16, 261);
+            Dt_Alumno.Name = "Dt_Alumno";
+            Dt_Alumno.RowHeadersWidth = 51;
+            Dt_Alumno.RowTemplate.Height = 29;
+            Dt_Alumno.Size = new Size(489, 336);
+            Dt_Alumno.TabIndex = 0;
+            // 
+            // lblMensaje1
+            // 
+            lblMensaje1.AutoSize = true;
+            lblMensaje1.Location = new Point(23, 136);
+            lblMensaje1.Name = "lblMensaje1";
+            lblMensaje1.Size = new Size(0, 20);
+            lblMensaje1.TabIndex = 17;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1173, 708);
+            ClientSize = new Size(1041, 609);
             Controls.Add(tabControl1);
+            Controls.Add(Dt_Alumno);
+            Controls.Add(Dt_Pago);
             Name = "Form1";
-            Text = "Form1";
+            Text = "CAJA DE ITSC";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabControl2.ResumeLayout(false);
             tabControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Dt_Pago).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Dt_Alumno).EndInit();
             ResumeLayout(false);
         }
 
@@ -379,33 +392,34 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabControl2;
-        private DataGridView dataGridView1;
+        private DataGridView Dt_Alumno;
         private Button button2;
-        private Button button1;
+        private Button Bt_Cargar_alm;
         private Button button4;
         private Button button3;
         private DataGridView Dt_Pago;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private Label label11;
+        private TextBox Txt_Apellido;
+        private TextBox Txt_Legajo;
+        private TextBox Txt_Nombre;
+        private TextBox Txt_DNI;
+        private TextBox Txt_DNI_Pago;
+        private TextBox Txt_Cuota;
+        private TextBox Txt_COD;
         private Label label10;
         private Label label9;
         private Label label8;
         private Label label7;
-        private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox textBox11;
-        private TextBox textBox10;
-        private TextBox textBox9;
+        private TextBox Txt_Monto;
+        private TextBox Txt_Descrip;
+        private CheckBox Check_Analitico;
+        private Label label6;
+        private DateTimePicker Fecha;
+        private Label lblMensaje;
+        private Label lblMensaje1;
     }
 }

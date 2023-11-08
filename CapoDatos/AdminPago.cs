@@ -17,7 +17,7 @@ namespace CapoDatos
             string orden = string.Empty;
             if (accion == "Alta")
             {
-                orden = $"insert into Pagos values ( '{pago.COD}','{pago.DNI_Alumno}','{pago.Cuota}',{pago.Fecha_Pago},{pago.Descripcion});";
+                orden = $"insert into Pagos values ( '{pago.COD}','{pago.Fecha_Pago}','{pago.Cuota}','{pago.Monto_Cuota}','{pago.DNI_Alumno}','{pago.Descripcion}');";
 
             }
 
@@ -27,7 +27,7 @@ namespace CapoDatos
             }
             if (accion == "Borrar")
             {
-                orden = "Delete* from Pagos WHERE DNI='" + pago.COD + "'";
+                orden = "Delete* from Pagos WHERE DNI_Alumno=" + pago.DNI_Alumno + "";
             }
 
             // falta la orden de borrar

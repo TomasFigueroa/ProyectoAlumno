@@ -40,9 +40,10 @@
             Txt_Legajo = new TextBox();
             Txt_Nombre = new TextBox();
             Txt_DNI = new TextBox();
-            button2 = new Button();
+            Bt_borrar = new Button();
             Bt_Cargar_alm = new Button();
             tabControl2 = new TabPage();
+            lblMensaje1 = new Label();
             label6 = new Label();
             Fecha = new DateTimePicker();
             label5 = new Label();
@@ -55,11 +56,10 @@
             Txt_DNI_Pago = new TextBox();
             Txt_Cuota = new TextBox();
             Txt_COD = new TextBox();
-            button4 = new Button();
-            button3 = new Button();
+            Bt_Eliminar_Pag = new Button();
+            BT_Cargar_Pag = new Button();
             Dt_Pago = new DataGridView();
             Dt_Alumno = new DataGridView();
-            lblMensaje1 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -89,7 +89,7 @@
             tabPage1.Controls.Add(Txt_Legajo);
             tabPage1.Controls.Add(Txt_Nombre);
             tabPage1.Controls.Add(Txt_DNI);
-            tabPage1.Controls.Add(button2);
+            tabPage1.Controls.Add(Bt_borrar);
             tabPage1.Controls.Add(Bt_Cargar_alm);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
@@ -181,14 +181,15 @@
             Txt_DNI.Size = new Size(125, 27);
             Txt_DNI.TabIndex = 3;
             // 
-            // button2
+            // Bt_borrar
             // 
-            button2.Location = new Point(852, 87);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 2;
-            button2.Text = "BORRAR";
-            button2.UseVisualStyleBackColor = true;
+            Bt_borrar.Location = new Point(852, 87);
+            Bt_borrar.Name = "Bt_borrar";
+            Bt_borrar.Size = new Size(94, 29);
+            Bt_borrar.TabIndex = 2;
+            Bt_borrar.Text = "BORRAR";
+            Bt_borrar.UseVisualStyleBackColor = true;
+            Bt_borrar.Click += Bt_borrar_Click;
             // 
             // Bt_Cargar_alm
             // 
@@ -215,8 +216,8 @@
             tabControl2.Controls.Add(Txt_DNI_Pago);
             tabControl2.Controls.Add(Txt_Cuota);
             tabControl2.Controls.Add(Txt_COD);
-            tabControl2.Controls.Add(button4);
-            tabControl2.Controls.Add(button3);
+            tabControl2.Controls.Add(Bt_Eliminar_Pag);
+            tabControl2.Controls.Add(BT_Cargar_Pag);
             tabControl2.Location = new Point(4, 29);
             tabControl2.Name = "tabControl2";
             tabControl2.Padding = new Padding(3);
@@ -224,6 +225,14 @@
             tabControl2.TabIndex = 1;
             tabControl2.Text = "Pago";
             tabControl2.UseVisualStyleBackColor = true;
+            // 
+            // lblMensaje1
+            // 
+            lblMensaje1.AutoSize = true;
+            lblMensaje1.Location = new Point(23, 136);
+            lblMensaje1.Name = "lblMensaje1";
+            lblMensaje1.Size = new Size(0, 20);
+            lblMensaje1.TabIndex = 17;
             // 
             // label6
             // 
@@ -321,23 +330,24 @@
             Txt_COD.Size = new Size(125, 27);
             Txt_COD.TabIndex = 4;
             // 
-            // button4
+            // Bt_Eliminar_Pag
             // 
-            button4.Location = new Point(883, 78);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            Bt_Eliminar_Pag.Location = new Point(883, 78);
+            Bt_Eliminar_Pag.Name = "Bt_Eliminar_Pag";
+            Bt_Eliminar_Pag.Size = new Size(94, 29);
+            Bt_Eliminar_Pag.TabIndex = 3;
+            Bt_Eliminar_Pag.Text = "Eliminar";
+            Bt_Eliminar_Pag.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BT_Cargar_Pag
             // 
-            button3.Location = new Point(883, 28);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            BT_Cargar_Pag.Location = new Point(883, 28);
+            BT_Cargar_Pag.Name = "BT_Cargar_Pag";
+            BT_Cargar_Pag.Size = new Size(94, 29);
+            BT_Cargar_Pag.TabIndex = 2;
+            BT_Cargar_Pag.Text = "Cargar";
+            BT_Cargar_Pag.UseVisualStyleBackColor = true;
+            BT_Cargar_Pag.Click += BT_Cargar_Pag_Click;
             // 
             // Dt_Pago
             // 
@@ -358,14 +368,6 @@
             Dt_Alumno.RowTemplate.Height = 29;
             Dt_Alumno.Size = new Size(489, 336);
             Dt_Alumno.TabIndex = 0;
-            // 
-            // lblMensaje1
-            // 
-            lblMensaje1.AutoSize = true;
-            lblMensaje1.Location = new Point(23, 136);
-            lblMensaje1.Name = "lblMensaje1";
-            lblMensaje1.Size = new Size(0, 20);
-            lblMensaje1.TabIndex = 17;
             // 
             // Form1
             // 
@@ -393,10 +395,10 @@
         private TabPage tabPage1;
         private TabPage tabControl2;
         private DataGridView Dt_Alumno;
-        private Button button2;
+        private Button Bt_borrar;
         private Button Bt_Cargar_alm;
-        private Button button4;
-        private Button button3;
+        private Button Bt_Eliminar_Pag;
+        private Button BT_Cargar_Pag;
         private DataGridView Dt_Pago;
         private TextBox Txt_Apellido;
         private TextBox Txt_Legajo;

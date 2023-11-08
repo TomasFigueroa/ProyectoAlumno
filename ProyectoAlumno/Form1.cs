@@ -11,11 +11,12 @@ namespace ProyectoAlumno
         private NegPago negpago = new NegPago();
         private NegAlumno negalumno = new NegAlumno();
         DataSet ds = new DataSet();
+        public DataTable DT { get; set; } = new DataTable();
         public Form1()
         {
             InitializeComponent();
             Dt_Alumno.ColumnCount = 5;
-            Dt_Alumno.Columns[0].HeaderText = "DNI";
+            Dt_Alumno.Columns[0].HeaderText = "DNII";
             Dt_Alumno.Columns[1].HeaderText = "Nombre";
             Dt_Alumno.Columns[0].Width = 100;
             Dt_Alumno.Columns[1].Width = 100;
@@ -73,7 +74,7 @@ namespace ProyectoAlumno
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    Dt_Alumno.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4], dr[5]);
+                    Dt_Pago.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4], dr[5]);
 
                 }
             }
@@ -85,21 +86,23 @@ namespace ProyectoAlumno
         }
         private void Bt_Cargar_alm_Click(object sender, EventArgs e)
         {
-            //string DATO = Txt_DNI.Text;
-            //if (DATO != "")
-            //{
-            //    autos.Patente = Txt_Patente.Text;
-            //    BuscarFilaAutos(Txt_Patente.Text, ds);
-            //    ds_a_Box(ds);
+            int nGrabados = -1;
+            CargarAlumno();
 
 
 
-            //    negAutos.abmAutos("Borrar", autos);
-            //    boton = true;
-            //    dgautos.Rows.Clear();
-            //    LlenarMod();
+            nGrabados = negalumno.abmAlumno("Alta", alumno);
+            if (nGrabados == -1)
+            {
+                MessageBox.Show("No se pudo grabar el Alumno en el sistema");
+            }
+            else
+            {
+                MessageBox.Show("Se pudo grabar el Alumno en el sistema con exito");
+                LlenarAlum();
 
-            //}
+
+            }
 
         }
         private void ds_a_Box(DataSet ds)
@@ -119,8 +122,98 @@ namespace ProyectoAlumno
             alumno.Apellido = Txt_Apellido.Text.ToUpper();
             alumno.Legajo = Convert.ToInt32(Txt_Legajo.Text);
             alumno.Analitico = Check_Analitico.Checked;
+
+
+        }
+
+        private void BT_Cargar_Pag_Click(object sender, EventArgs e)
+        {
+            int nGrabados = -1;
+            CargarPago();
+
+            //bool fila = Validar();
+
+            //if (fila == true)
+            {
+                nGrabados = negpago.abmPago("Alta", pago);
+                if (nGrabados == -1)
+                {
+                    MessageBox.Show("No se pudo grabar el pago en el sistema");
+                }
+                else
+                {
+                    MessageBox.Show("Se pudo grabar el pago en el sistema con exito");
+                    LlenarPag();
+
+
+                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("No se pudo grabar el pago en el sistema");
+                //}
+
+
+            }
+        }
+        private void CargarPago()
+        {
+            pago.COD = Convert.ToInt32(Txt_COD.Text);
+            pago.Cuota = Convert.ToInt32(Txt_Cuota.Text);
+            pago.Descripcion = Txt_Descrip.Text;
+            pago.Monto_Cuota = Convert.ToInt32(Txt_Monto.Text);
+            pago.DNI_Alumno = Convert.ToInt32(Txt_DNI_Pago.Text);
+            pago.Fecha_Pago = DateTime.Now;
+        }
+        //private bool Validar()
+        //{
+        //    bool res = false;
+        //    filas = BuscarFilaAlumno(Txt_DNI_Pago.Text, ds);
+
+        //    if (filas != -1)
+        //    {
+        //        res = true;
+        //    }
+
+        //    return res;
+        //}
+        //public int filas = -1;
+        //public int BuscarFilaAlumno(string alumn, DataSet ds)
+        //{
            
 
+        //    for (int i = 0; i < Dt_Alumno.Rows.Count; i++)
+        //    {
+        //        if (ds.Tables[0].Rows[i]["DNII"].ToString() == alumn)
+        //        {
+        //            filas = i;
+        //            break;
+        //        }
+        //    }
+
+        //    return filas;
+        //}
+
+
+        private void Bt_borrar_Click(object sender, EventArgs e)
+        {
+            string DATO = Txt_DNI.Text;
+            if (DATO != "")
+            {
+                alumno.DNI = Convert.ToInt32(Txt_DNI.Text);
+                pago.DNI_Alumno = Convert.ToInt32(Txt_DNI.Text);
+
+
+
+
+                negpago.abmPago("Borrar", pago);
+                negalumno.abmAlumno("Borrar", alumno);
+
+                MessageBox.Show("Se pudo borrar el Alumno y sus pagos con exito");
+                LlenarAlum();
+                LlenarPag();
+
+            }
         }
     }
 }

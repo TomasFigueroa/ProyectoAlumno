@@ -12,17 +12,17 @@ namespace CapoDatos
             string orden = string.Empty;
             if (accion == "Alta")
             {
-                orden = $"insert into Pagos values ( '{aLumno.DNI}','{aLumno.Nombre}','{aLumno.Apellido}',{aLumno.Legajo},{aLumno.Analitico});";
+                orden = $"insert into Alumno values ( '{aLumno.DNI}','{aLumno.Nombre}','{aLumno.Apellido}',{aLumno.Legajo},{aLumno.Analitico});";
 
             }
 
             if (accion == "Modificar")
             {
-                orden = "update Pagos SET Nombre='" + aLumno.Nombre + "'Apellido='" + aLumno.Apellido + "Legajo=" + aLumno.Legajo + "Analitico=" + aLumno.Analitico + "'where DNI='" + aLumno.DNI + "'";
+                orden = "update Alumno SET Nombre='" + aLumno.Nombre + "'Apellido='" + aLumno.Apellido + "Legajo=" + aLumno.Legajo + "Analitico=" + aLumno.Analitico + "'where DNI='" + aLumno.DNI + "'";
             }
             if (accion == "Borrar")
             {
-                orden = "Delete* from Alumno WHERE DNI='" + aLumno.DNI + "'";
+                orden = "Delete* from Alumno WHERE DNI=" + aLumno.DNI + "";
             }
 
             // falta la orden de borrar

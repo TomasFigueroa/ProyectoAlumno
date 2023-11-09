@@ -1,5 +1,6 @@
 using BackendAlumno;
 using CapaNegocio;
+using CapoDatos;
 using System.Data;
 
 namespace ProyectoAlumno
@@ -10,13 +11,14 @@ namespace ProyectoAlumno
         private Pago pago = new Pago();
         private NegPago negpago = new NegPago();
         private NegAlumno negalumno = new NegAlumno();
+        private AdminAlumno adminAlumno = new AdminAlumno();
         DataSet ds = new DataSet();
         public DataTable DT { get; set; } = new DataTable();
         public Form1()
         {
             InitializeComponent();
             Dt_Alumno.ColumnCount = 5;
-            Dt_Alumno.Columns[0].HeaderText = "DNII";
+            Dt_Alumno.Columns[0].HeaderText = "DNI";
             Dt_Alumno.Columns[1].HeaderText = "Nombre";
             Dt_Alumno.Columns[0].Width = 100;
             Dt_Alumno.Columns[1].Width = 100;
@@ -130,10 +132,21 @@ namespace ProyectoAlumno
         {
             int nGrabados = -1;
             CargarPago();
-
-            //bool fila = Validar();
-
-            //if (fila == true)
+            bool pag = false;
+            bool fila = Validar();
+            DataSet ds = adminAlumno.listadoAlumno("Todos");
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    if (dr[0].ToString() == Txt_DNI_Pago.Text)
+                    {
+                        pag = true;
+                    }
+                }
+                if (!pag) { MessageBox.Show("el DNI no corresponde a ningun alumno"); return; };
+            }
+            if (pag == true)
             {
                 nGrabados = negpago.abmPago("Alta", pago);
                 if (nGrabados == -1)
@@ -147,14 +160,14 @@ namespace ProyectoAlumno
 
 
                 }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("No se pudo grabar el pago en el sistema");
-                //}
-
-
             }
+            else
+            {
+                MessageBox.Show("No se pudo grabar el pago en el sistema");
+            }
+
+
+
         }
         private void CargarPago()
         {
@@ -165,34 +178,34 @@ namespace ProyectoAlumno
             pago.DNI_Alumno = Convert.ToInt32(Txt_DNI_Pago.Text);
             pago.Fecha_Pago = DateTime.Now;
         }
-        //private bool Validar()
-        //{
-        //    bool res = false;
-        //    filas = BuscarFilaAlumno(Txt_DNI_Pago.Text, ds);
+        private bool Validar()
+        {
+            bool res = false;
+            filas = BuscarFilaAlumno(Txt_DNI_Pago.Text, ds);
 
-        //    if (filas != -1)
-        //    {
-        //        res = true;
-        //    }
+            if (filas != -1)
+            {
+                res = true;
+            }
 
-        //    return res;
-        //}
-        //public int filas = -1;
-        //public int BuscarFilaAlumno(string alumn, DataSet ds)
-        //{
-           
+            return res;
+        }
+        public int filas = -1;
+        public int BuscarFilaAlumno(string alumn, DataSet ds)
+        {
 
-        //    for (int i = 0; i < Dt_Alumno.Rows.Count; i++)
-        //    {
-        //        if (ds.Tables[0].Rows[i]["DNII"].ToString() == alumn)
-        //        {
-        //            filas = i;
-        //            break;
-        //        }
-        //    }
 
-        //    return filas;
-        //}
+            for (int i = 0; i < Dt_Alumno.Rows.Count; i++)
+            {
+                if (ds.Tables[0].Rows[i]["DNI_Alumno"].ToString() == alumn)
+                {
+                    filas = i;
+                    break;
+                }
+            }
+
+            return filas;
+        }
 
 
         private void Bt_borrar_Click(object sender, EventArgs e)
@@ -211,6 +224,23 @@ namespace ProyectoAlumno
 
                 MessageBox.Show("Se pudo borrar el Alumno y sus pagos con exito");
                 LlenarAlum();
+                LlenarPag();
+
+            }
+        }
+
+        private void Bt_Eliminar_Pag_Click(object sender, EventArgs e)
+        {
+            string DATO = Txt_COD.Text;
+            if (DATO != "")
+            {
+
+                pago.COD = Convert.ToInt32(Txt_COD.Text);
+
+                negpago.abmPago("Eliminar", pago);
+
+                MessageBox.Show("Se pudo borrar su pago con exito");
+
                 LlenarPag();
 
             }

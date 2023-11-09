@@ -29,6 +29,10 @@ namespace CapoDatos
             {
                 orden = "Delete* from Pagos WHERE DNI_Alumno=" + pago.DNI_Alumno + "";
             }
+            if (accion == "Eliminar")
+            {
+                orden = "Delete* from Pagos WHERE COD=" + pago.COD + "";
+            }
 
             // falta la orden de borrar
             OleDbCommand cmd = new OleDbCommand(orden, conexion);

@@ -7,6 +7,7 @@ namespace CapaNegocio
     public class NegAlumno
     {
         AdminAlumno DatosAlumno = new AdminAlumno();
+        
         public int abmAlumno(string accion, ALumno aLumno)
         {
             return DatosAlumno.abmAlumno(accion, aLumno);

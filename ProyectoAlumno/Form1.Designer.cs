@@ -338,6 +338,7 @@
             Bt_Eliminar_Pag.TabIndex = 3;
             Bt_Eliminar_Pag.Text = "Eliminar";
             Bt_Eliminar_Pag.UseVisualStyleBackColor = true;
+            Bt_Eliminar_Pag.Click += Bt_Eliminar_Pag_Click;
             // 
             // BT_Cargar_Pag
             // 
@@ -351,9 +352,11 @@
             // 
             // Dt_Pago
             // 
+            Dt_Pago.AllowUserToAddRows = false;
             Dt_Pago.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Dt_Pago.Location = new Point(529, 261);
             Dt_Pago.Name = "Dt_Pago";
+            Dt_Pago.ReadOnly = true;
             Dt_Pago.RowHeadersWidth = 51;
             Dt_Pago.RowTemplate.Height = 29;
             Dt_Pago.Size = new Size(490, 336);
